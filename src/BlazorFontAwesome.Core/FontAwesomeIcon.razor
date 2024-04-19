@@ -1,0 +1,46 @@
+<span class="fa-icon-wrapper" style="
+    width: @(Size)px;
+    height: @(Size)px;
+    fill: @Color;
+    stroke: @StrokeColor;
+    stroke-width: @Stroke;
+">
+    @ChildContent
+</span>
+
+<style>
+    .fa-secondary {
+        fill: @SecondaryColor;
+        opacity: @SecondaryOpacity;
+    }
+
+    .fa-icon-wrapper {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        vertical-align: middle;
+    }
+
+</style>
+@code {
+    [Parameter]
+    public RenderFragment ChildContent { get; set; } = null!;
+
+    [Parameter]
+    public int Size { get; set; } = 20;
+
+    [Parameter]
+    public string Color { get; set; } = "black";
+
+    [Parameter]
+    public int Stroke { get; set; } = 0;
+
+    [Parameter]
+    public string StrokeColor { get; set; } = "black";
+
+    [Parameter]
+    public string SecondaryColor { get; set; } = "black";
+
+    [Parameter]
+    public string SecondaryOpacity { get; set; } = "40%";
+}
